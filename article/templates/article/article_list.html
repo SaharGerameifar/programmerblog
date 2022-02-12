@@ -1,0 +1,66 @@
+{% extends 'shared/base.html' %}
+{% load render_partial %}
+{% load static %}
+{% load ratings %}
+{% block title %} | همه مقالات {% endblock title %}
+{% block content %}
+  <br>
+    <section class="mt-4">
+        <div class="container">
+              <div class="introduction-section">
+                <h2>ليست مقالات</h2>
+              </div>
+              <div class="row">
+
+                    {% for article in object_list %}
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="card wow fadeInDownBig animated" data-wow-delay=".8s">
+                              <div class="our-post">
+                                <img src="{{ article.thumbnail.url }}" class="img-fluid" />
+                                <div class="post-content">
+                                  <h3 class="title">
+                                        {{ article.title }}
+                                        {% if article.is_special %}
+                                            <span class="badge bg-danger" style="font-size: 12px;">مقاله ویژه</span>
+                                        {% endif %}
+                                  </h3>
+                                  <span class="post"><a href="{% url 'article:author' article.author %}"><i class="fa fa-user-circle px-2"></i> {{ article.author.get_full_name }} </a></span>
+                                  <p class="description"> {{ article.description|striptags|truncatewords:20 }} </p>
+                                  <ul class="post-footer">
+                                     <li>
+                                         {% ratings article %}
+                                     </li>
+                                     <li>
+                                          <a href="{% url 'article:article-detail' article.slug %}"><i class="fa fa-eye-slash px-2"></i>مطالعه مقاله
+                                          </a>
+                                     </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                   {% endfor %}
+
+              </div>
+        </div>
+        <br>
+        <div class="clearfix"></div>
+        <div>
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                     <li class="page-item"><a class="page-link" href="{% url 'article:article_list' page_obj.previous_page_number %}">قبلی</a></li>
+                {% endif %}
+                {% for page in paginator.page_range %}
+                    {% if page == page_obj.number %}
+                        <li class="page-item active"><a class="page-link" href="{% url 'article:article_list' page %}">{{ page }}</a></li>
+                    {% else %}
+                        <li class="page-item "><a class="page-link" href="{% url 'article:article_list' page %}">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                     <li class="page-item"><a class="page-link" href="{% url 'article:article_list' page_obj.next_page_number %}">بعدی</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

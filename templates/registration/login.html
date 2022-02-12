@@ -1,0 +1,82 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}| ورود {% endblock title %}
+
+{% block content %}
+
+     <br />
+    <section class="content my-5">
+      <div class="container">
+        <div class="row">
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+          <div class="col-md-6 col-12">
+
+            <form method="POST" class="form-login wow fadeInDownBig animated" data-wow-delay=".3s">
+                {% csrf_token %}
+                <b class="register-title">ورود به سايت</b>
+                <div class="wrap-input100 validate-input form-group register" data-validate = "Valid email is: a@b.c">
+                  <input class="input100 form-control" type="text" name="username">
+                    {% if form.username.errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                  <span class="focus-input100" data-placeholder="نام كاربري خود را وارد كنيد"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input form-group register" data-validate="Enter password">
+                  <span class="btn-show-pass">
+                    <i class="fa fa-eye"></i>
+                  </span>
+                  <input class="input100 form-control" type="password" name="password">
+                    {% if form.password.errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                  <span class="focus-input100" data-placeholder="گذر واژه خود را وارد كنيد"></span>
+                </div>
+
+                 <div class="text-center ">
+
+						<a class="txt2 " href="{% url 'password_reset' %}">
+							گذر واژه خود را فراموش کرده اید؟(اینجا کلیک کنید.)
+						</a>
+                        <br>
+                        <a class="txt2 mt-2" href="{% url 'register' %}">
+							حساب کاربری ندارید؟(ثبت نام کنید.)
+						</a>
+
+					</div>
+
+                <button type="submit" class="btn btn-primary btn-block mt-2">
+                  ورود
+                </button>
+
+            </form>
+          </div>
+          <div class="d-none d-md-flex col-md-6">
+            <img
+                src="{% static "image/14.jpg" %}"
+                alt=""
+                class="img-fluid wow fadeInRight animated"
+                data-wow-delay=".3s"
+              />
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+

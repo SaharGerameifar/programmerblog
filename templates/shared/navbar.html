@@ -1,0 +1,107 @@
+ <!-- Navigation-->
+       <!-- <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'home'  %}">وبلاگ برنامه نویسی</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse nav" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home'  %}">خانه</a></li>
+                        {% for category in categories %}
+                            {% if category.parent == None %}
+                                    <li class="nav-item">
+                                        <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'article:article_category_list' category.slug %}">{{ category.title }}</a>
+                                        {% if category.children.active %}
+                                            {% include 'shared/category_navbar_loop.html' %}
+                                        {% endif %}
+                                    </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+
+ <!--start navbar element  -->
+
+
+{% load static %}
+      <div class="row">
+        <div class="col-lg-8 col-12" style="z-index: 200">
+
+          <nav class="navbar navbar-expand-lg navbar-light pt-3 pb-lg-5 wow fadeInLeft animated" data-wow-delay="0.3s">
+            <a class="navbar-brand" href="{% url 'home'  %}">
+              <img src="{{ settings.logo_image.url }}" class="img-fluid navbar-brand-img" alt="برنامه نويس موفق">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-icon">
+                <i class="fa fa-bars"></i>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home'  %}">خانه <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="{% url 'article:article_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    مقالات <i class="fa fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      {% for category in categories %}
+                            {% if category.parent == None %}
+                                 <a class="dropdown-item" href="{% url 'article:article_category_list' category.slug %}">{{ category.title }}</a>
+                                 {% if category.children.active %}
+                                    {% include 'shared/category_navbar_loop.html' %}
+                                 {% endif %}
+
+                            {% endif %}
+                        {% endfor %}
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contactus:contact' %}">تماس با ما</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about_us' %}">درباره ما</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account:profile' %}"> پروفايل </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>  </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}">ورود </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'register' %}">ثبت نام  </a>
+                    </li>
+                {% endif %}
+              </ul>
+
+            </div>
+
+          </nav>
+
+        </div>
+        <div class="col-lg-4 col-12 " style="z-index: 250">
+          <div class="search-container" >
+            <form action="{% url 'article:search' %}">
+                <input type="text" name="search" placeholder="دنبال چي مي گردي؟" />
+                <div class="search"><a href="#"></a> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--end navbar element  -->

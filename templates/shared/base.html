@@ -1,0 +1,40 @@
+{% load static %}
+{% load render_partial %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>برنامه نويس موفق {% block title %}{% endblock title %}</title>
+  {% render_partial 'meta_header' %}
+  {% include 'shared/HeaderReferences.html' %}
+  {% block custome-header %}{% endblock custome-header %}
+</head>
+
+<body>
+  <!--start preloder -->
+  <div class="preloader d-flex justify-content-center align-items-center">
+    <img src="{% static "image/preloader.gif" %}" alt="preloder" />
+    <p>صفحه در حال بار گذاری است.</p>
+    <p>لطفا صبر کنید.</p>
+  </div>
+  <!--end preloder -->
+  <!-- start header  -->
+  <header class="pb-lg-5">
+  {% render_partial 'header' %}
+    <div class="container">
+      <!--start navbar element  -->
+        {% render_partial 'navbar' %}
+        {% block slider %}{% endblock %}
+    </div>
+        {% block shap_main_page %}{% endblock %}
+   </header>
+  <!-- end header  -->
+  <!--start content -->
+  {% block content %}{% endblock %}
+  <!--end content -->
+ {% render_partial 'footer' %}
+ {% include 'shared/FooterReferences.html' %}
+ </body>
+
+</html>

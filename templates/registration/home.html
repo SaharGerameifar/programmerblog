@@ -1,0 +1,87 @@
+{% extends 'registration/base.html' %}
+{% block title %}{% block title-meta %}
+    لیست مقالات
+{% endblock %}{% endblock %}
+{% block main %}
+    <div class="row">
+          <div class="col-12">
+            {% if object_list %}
+                <div class="card">
+
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>عنوان مقاله</th>
+                      <th>نویسنده</th>
+                      <th>تصویر مقاله</th>
+                      <th>دسته بندی</th>
+                      <th>خلاصه</th>
+                      <th>زمان انتشار</th>
+                      <th>مقاله ویژه</th>
+                      <th>وضعیت</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for article in object_list %}
+                        <tr>
+                          <td>
+                              {% if article.status in 'bd'|make_list or user.is_superuser %}
+                                    <a href="{% url 'account:article-update' article.pk %}">{{ article.title }}</a>
+                              {% else %}
+                                    {{ article.title }}
+                              {% endif %}
+                          </td>
+                          <td>{{ article.author.get_full_name }}</td>
+                          <td><img src="{{ article.thumbnail.url }}" width="100" height="75" style='border-radius:5px;'> </td>
+                          <td>{{ article.category_to_str }}</td>
+                          <td>{{ article.description|striptags|truncatewords:10 }}</td>
+                          <td>{{ article.jpublish }}</td>
+                          <td>
+                              {% if article.is_special %}
+                                    <i class="fa fa-check-circle" style="color:green;"></i>
+                              {% else %}
+                                     <i class="fa fa-minus-circle" style="color:red;"></i>
+                              {% endif %}
+                          </td>
+                          <td>
+                              {% if article.status == 'p' %}
+                                  <span class="badge badge-success">منتشر شده</span>
+                                  <a class="badge badge-primary" target="_blank" href="{% url 'article:article-detail' article.slug %}">مشاهده مقاله در سایت</a>
+                              {% elif article.status == 'i' %}
+                                  <span class="badge badge-info">در حال بررسی</span>
+                                  {% if user.is_superuser %}
+                                        <a class="badge badge-secondary" target="_blank" href="{% url 'article:article-preview' article.pk %}">پیش نمایش مقاله</a>
+                                  {% endif %}
+                              {% else %}
+                                  {% if article.status == 'd' %}
+                                        <span class="badge badge-dark">پیش نویس شده</span>
+                                  {% else %}
+                                        <span class="badge badge-warning ">برگشت داده شده</span>
+                                  {% endif %}
+                                  <a class="badge badge-secondary" target="_blank" href="{% url 'article:article-preview' article.pk %}">پیش نمایش مقاله</a>
+
+                              {% endif %}
+                              {% if user.is_superuser %}
+                                  <a class="badge badge-danger" href="{% url 'account:article-delete' article.pk %}">حذف مقاله </a>
+                              {% endif %}
+                          </td>
+                          </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            {% else %}
+                <div class="col-md-8 text-center mx-auto">
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title mb-0 float-right"> لیست مقالات شما خالی است.</h3>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+  <!--start footer section  -->
+  <div class="shape3">
+    <div class="custom-shape-divider-bottom-1638838780">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+    <footer class="footer ">
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-l2 col-md-1 ">
+
+          </div>
+          <div class="col-l2 col-md-5 wow fadeInDownBig animated" data-wow-delay="0.9s">
+            <p class="link-footer-title1">لینک دسترسی سریع</p>
+            <a href="{% url 'home'  %}" class="footer-link">خانه</a>
+            <a href="{% url 'article:article_list' %}" class="footer-link">مقالات</a>
+            <a href="{% url 'contactus:contact' %}" class="footer-link">تماس با ما </a>
+            <a href="{% url 'about_us' %}" class="footer-link">درباره ما </a>
+
+          </div>
+          <div class="col-l2 col-md-6 social-ways wow fadeInLeft animated" data-wow-delay=".3s">
+            <a href="{{ settings.linkedin }}" class="footer-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="{{ settings.github }}" class="footer-icon"><i class="fa fa-github"></i></a>
+            <a href="{{ settings.telegram }}" class="footer-icon "><i class="fa fa-telegram"></i></a>
+            <a href="{{ settings.instagram }}" class="footer-icon"><i class="fa fa-instagram"></i></a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+  <div class="footer2 wow fadeInLeft animated" data-wow-delay="1.5s">
+    <p class="footer-privacy">{{ settings.copy_right }} </p>
+  </div>

@@ -1,0 +1,29 @@
+
+<div class="card mt-4 rounded-1 wow fadeInDownBig animated" data-wow-delay=".3s">
+     <h5 class="text-right card-header">ليست مقالات پر بازديد ماه</h5>
+     <div class="card-body">
+          {% for popular_article in popular_articles %}
+             <div class="text-center my-2">
+                 <img src="{{ popular_article.thumbnail.url }}" alt="{{ popular_article.title }}" class="img-fluid w-50 h-75 img-article">
+                 <div class="mt-2">
+                    <a class="text-dark " href="{% url 'article:article-detail' popular_article.slug %}"><p class="popular_article_title">{{ popular_article.title }} </p> </a>
+                 </div>
+             </div>
+             <hr >
+         {% endfor %}
+     </div>
+</div>
+ <div class="card mt-4 rounded-1 wow fadeInDownBig animated" data-wow-delay=".8s">
+     <h5 class="text-right card-header">ليست مقالات داغ ماه</h5>
+     <div class="card-body">
+         {% for hot_article in hot_articles %}
+             <div class="text-center my-2">
+                 <img src="{{ hot_article.thumbnail.url }}" alt="{{hot_article.title }}" class="img-fluid w-50 h-75 img-article">
+                 <div class="mt-2">
+                     <a class="text-dark " href="{% url 'article:article-detail' hot_article.slug %}"><p class="popular_article_title">{{ hot_article.title }}</p></a>
+                 </div>
+             </div>
+             <hr>
+         {% endfor %}
+     </div>
+ </div>

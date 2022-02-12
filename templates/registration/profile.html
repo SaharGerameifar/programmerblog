@@ -1,0 +1,68 @@
+{% extends 'registration/base.html' %}
+{% load gravatar %}
+{% load widget_tweaks %}
+{% load  crispy_forms_tags%}
+{% block title %}{% block title-meta %}
+    پروفایل کاربر
+{% endblock %}{% endblock %}
+{% block main %}
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title mb-0 float-right">پروفایل کاربری</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.username|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.email|as_crispy_field }}
+                    </div>
+                    <div class="col-md-12 p-3 my-3 badge-warning" style="border-radius: 5px">
+                        <label for="#chenge_password">گذر واژه : </label>
+                        <span id="chenge_password">برای تغییر گذر واژه <a href="{% url 'password_change' %}">کلیک </a>کنید . </span>
+                    </div>
+                     <div class="col-md-6">
+                        {{ form.first_name|as_crispy_field }}
+                    </div>
+                     <div class="col-md-6">
+                        {{ form.last_name|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.special_user|as_crispy_field }}
+                    </div>
+                     <div class="col-md-6">
+                        {{ form.is_author|add_class:"w-75"|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.image|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.job_title|as_crispy_field }}
+                    </div>
+                     <div class="col-md-12">
+                        {{ form.linkedin|as_crispy_field }}
+                    </div>
+                    <div class="col-md-12">
+                        {{ form.github|as_crispy_field }}
+                    </div>
+                    <div class="col-md-12">
+                        {{ form.instagram|as_crispy_field }}
+                    </div>
+                    <div class="col-md-12">
+                        {{ form.telegram|as_crispy_field }}
+                    </div>
+
+                </div>
+
+                <button class="btn btn-success" type="submit">ویرایش اطلاعات</button>
+
+    </form>
+        </div>
+    </div>
+
+{% endblock %}

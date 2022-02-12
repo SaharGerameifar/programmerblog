@@ -1,0 +1,13 @@
+{% extends "star_ratings/widget_base.html" %}
+{% block rating_detail %}
+<div>
+    {% block rating_average %}
+    <div class="star-ratings-rating-average">ميانگين امتياز: <span class='star-ratings-rating-value'>{{ rating.average|floatformat:"-2" }}</span></div>
+    {% endblock rating_average %}
+   {% if not user.is_authenticated %}
+         <small>
+            براي راي دادن بايد وارد حساب كاربري تان شويد.
+        </small>
+   {% endif %}
+</div>
+{% endblock %}

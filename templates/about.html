@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load gravatar %}
+{% block content %}
+<section class="mt-4 ">
+    <br>
+    <div class="container">
+        <div class="row">
+            {% for author in authors %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mx-auto">
+                    <div class="card" >
+                        <div class="cards wow fadeInDownBig animated" data-wow-delay=".8s">
+                            <div class="imgBx">
+                                {% if author.image %}
+                                    <img src="{{ author.image.url }}" alt="{{ author.get_full_name }}">
+                                {% else %}
+                                    <img src="{% gravatar_url author.email 150 %}" alt="{{ author.get_full_name }}">
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <div class="details">
+                                    <h2>{{ author.get_full_name }}<br><span>{{ author.job_title }}</span></h2>
+                                    <ul class="social_icons">
+                                        <li><a href="{{ author.linkedin }}"><i class="fa fa-linkedin"></i> </a> </li>
+                                        <li><a href="{{ author.github }}"><i class="fa fa-github"></i> </a> </li>
+                                        <li><a href="{{ author.instagram }}"><i class="fa fa-instagram"></i> </a> </li>
+                                        <li><a href="{{ author.telegram }}"><i class="fa fa-telegram"></i> </a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

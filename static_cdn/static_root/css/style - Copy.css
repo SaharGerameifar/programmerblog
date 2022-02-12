@@ -1,0 +1,590 @@
+                            @import url(font-awesome.min.css);
+                            @font-face {
+                                font-family: Sahel;
+                                src: url('../font/Sahel.eot');
+                                src: url('../font/Sahel.eot?#iefix') format('embedded-opentype'),
+                                     url('../font/Sahel.woff2') format('woff2'),
+                                     url('../font/Sahel.woff') format('woff'),
+                                     url('../font/Sahel.ttf') format('truetype');
+                                font-weight: normal;
+                              }
+                            body {
+                                font-family: Sahel;
+                                text-align: right;
+                                direction: rtl;
+                                font-size: 0.95rem;
+                            }
+                            
+                            a {
+                                text-decoration: none;
+                            }
+                            
+                            a:hover {
+                                text-decoration: none;
+                            }
+                            /* start css style for index.php  */
+                            
+                            .preloader {
+                                position: fixed;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                background: white;
+                                z-index: 1000;
+                            }
+                            
+                            .preloader img {
+                                width: 33%;
+                                height: 35%;
+                            }
+                            
+                            .hidpreloader {
+                                display: none !important;
+                            }
+                            .custom-shape-divider-top-1638839336 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                overflow: hidden;
+                                line-height: 0;
+                                transform: rotate(180deg);
+                            }
+                            
+                            .custom-shape-divider-top-1638839336 svg {
+                                position: relative;
+                                display: block;
+                                width: calc(138% + 1.3px);
+                                height: 134px;
+                            }
+                            
+                            .custom-shape-divider-top-1638839336 .shape-fill {
+                                fill: rgb(255, 196, 0);
+                                
+                            }
+                            .shape2{
+                                position: relative;
+                                margin-bottom: 0px!important;
+                                margin-top:3.5rem!important;
+                            }   
+                            
+                           .custom-shape-divider-bottom-1638839021 {
+                               position: absolute;
+                               bottom: 0;
+                               left: 0;
+                               width: 100%;
+                               overflow: hidden;
+                               line-height: 0;
+                               transform: rotate(180deg);
+                           }
+                           
+                           .custom-shape-divider-bottom-1638839021 svg {
+                               position: relative;
+                               display: block;
+                               width: calc(106% + 1.3px);
+                               height: 139px;
+                           }
+                           
+                           .custom-shape-divider-bottom-1638839021 .shape-fill {
+                               fill: rgb(255, 196, 0);
+                           }
+                           .navbar-brand-img{
+                               width: 4rem;
+                               height: 4rem;
+                           }
+
+                            .navbar-brand {
+                                font-size: 0.70rem !important;
+                                color: #696763!important;
+                            }
+                            
+                            .navbar-brand:hover {
+                                color:#212529 !important;
+                            }
+                            
+                            .navbar-expand-lg .navbar-nav .nav-link {
+                                padding-right: 0.8rem;
+                                padding-left: 0.8rem;
+                            }
+                            
+                            a.nav-link {
+                                color: #696763!important;
+                            }
+                            
+                            a.nav-link:hover {
+                                color:#212529 !important;
+                                cursor: pointer;
+                            }
+                            
+                            .nav-item {
+                                float: right;
+                            }
+                            
+                            a.dropdown-item {
+                                text-align: right;
+                                direction: rtl;
+                            }
+                            
+                            .navbar-icon {
+                                font-size: 1.3rem;
+                                color: #696763!important;
+                            }
+                            
+                            .navbar-toggler {
+                                outline-color:#696763 !important;
+                            }
+                           .category-navbar{
+                               font-size: 0.9rem;
+                               
+                           }
+                           
+
+                            .carousel-control-prev-icon , .carousel-control-next-icon{
+                                border-radius: 50px;
+                            }
+                            .placholder {
+                                font-size: 0.80rem;
+                                padding-right: 20px;
+                            }
+                            
+                            .form-search {
+                                padding: 0 auto!important;
+                            }
+                            
+                            .search-box {
+                                width: 60%!important;
+                                border-radius: 40px;
+                            }
+                            
+                            .search-icon {
+                                color: rgba(51, 51, 51, 0.596);
+                                font-size: 1.2rem;
+                                margin-right: -2rem;
+                                transition: all 1s ease-in-out;
+                            }
+                            
+                            .search-icon:hover {
+                                color: rgb(255, 196, 0);
+                                transform: translateY(-10%);
+                            }
+                            .search-box-aside{
+                                border-radius: 10px;
+                                margin-left: 5px!important;
+                            }
+                            .bg-header-content{
+                                margin-top: 9rem;
+                                margin-right: 7rem;
+                            }
+                           .login-btn{
+                               margin-left: -28px;
+                           }
+                            .list-group>a{
+                                transition: all 1s ease-in-out;
+                            }
+
+                            .list-group>a:hover{
+                                color: rgb(255, 196, 0);
+                                transform: translateY(-10%);
+                            }
+                            .list-group>a>i{
+                                transition: all 1s ease-in-out;
+                            }
+
+                            .list-group>a>i:hover{
+                                color: rgb(255, 196, 0);
+                                transform: translateY(-10%);
+                            }
+                            .introduction-section{
+                                text-align: center!important;
+                                background-color: rgb(255, 196, 0);
+                                border-radius: 10px;
+                                padding: 5px 15px;
+                                margin-bottom: 20px;
+                                margin-top: 20px;
+                                animation: all 2s ease-in-out;
+                            }    
+
+                            .introduction-section:hover {
+                                background-color: #ffffff;
+                                
+                            }
+                            
+                            .introduction-section h2{
+                                color: #ffffff;
+                                animation: all 2s ease-in-out;
+                            }
+                            .introduction-section h2:hover{
+                                color: rgb(255, 196, 0);
+                            }
+                            .carousel-inner{
+                                z-index:-100!important;
+                            }
+                            .card{
+                                border-radius: 10px;
+                                box-shadow: 0 5px 10px 0px rgb(0 0 0 / 10%);
+                                -webkit-box-shadow: 0 5px 10px 0px rgb(0 0 0 / 10%);
+                            }
+
+                            .card-img-top {
+                                background: skyblue;
+                                position: relative;
+                                cursor: pointer;
+                                border-radius: 10px 10px 0 0;
+                               
+                            }
+                            
+                            .card-img-top {
+                                transition: all 1s ease-in-out;
+                            }
+                            
+                            .card:hover .card-img-top {
+                                opacity: 0.5;
+                            }
+                            
+                            .card:hover:after {
+                                transform: scale(1);
+                            }
+                            
+                            .hover-card {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                margin-top: 25%;
+                                margin-right: 45%;
+                            }
+                            
+                            .hover-card i {
+                                color: skyblue;
+                                font-weight: bold;
+                                font-size: 2rem!important;
+                                display: none;
+                                
+                            }
+                            
+                            .card:hover .hover-card i {
+                                display: block;
+                                z-index: 5;
+                            }
+                            
+                            .second-section{
+                                background: transparent;
+                            }
+                            .shape3{
+                                position: relative;
+                                margin-bottom: 0px!important;
+                                margin-top:3.5rem!important;
+                                
+                            } 
+                            .custom-shape-divider-bottom-1638838780 {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                overflow: hidden;
+                                line-height: 0;
+                                z-index:-100;
+                            }
+                            
+                            .custom-shape-divider-bottom-1638838780 svg {
+                                position: relative;
+                                display: block;
+                                width: calc(124% + 1.3px);
+                                height: 122px;
+                                z-index:-100;
+                            }
+                            
+                            .custom-shape-divider-bottom-1638838780 .shape-fill {
+                                fill:  rgb(255, 196, 0);
+                                z-index:-100;
+                            }
+                            .social-ways{
+                                padding-top: 120px;
+                            }
+
+                          
+                            .footer-icon {
+                                display: inline;
+                                color: #212529;
+                                font-size: 2rem;
+                                text-decoration: none;
+                                transition: all 1s ease-in-out;
+                                padding: 0.5rem 0.5rem;
+                            }
+                            
+                            .footer-icon:hover {
+                                color: rgba(219, 196, 196, 0.973);
+                            }
+                            
+                            .footer-link {
+                                display: block;
+                                color:#212529;
+                                font-size: 1rem;
+                                text-decoration: none;
+                                transition: all 1s ease-in-out;
+                                padding: 0.3rem 0;
+                            }
+                            
+                            .footer-link:hover {
+                                color:#007bff;
+                            }
+                            
+                            .link-footer-title1 {
+                                display: inline-block;
+                                font-size: 1.3rem;
+                                color: #212529;
+                                border-bottom: 1px solid #007bff;
+                                padding: 0.3rem 0;
+                            }
+                            
+                            
+                            
+                            .footer-privacy {
+                                font-size: 0.6rem;
+                                color: #212529;
+                                margin-bottom: 0;
+                                text-align: center;
+                            }
+                            
+                            .footer-privacy-link {
+                                text-align: center;
+                                color: #212529;
+                            }
+                            .register-title {
+                                display: block;
+                                margin-bottom: 1.5rem;
+                                text-align: center;
+                                font-size: 1.5rem;
+                            }
+                            
+                            .register input {
+                              
+                                outline: none;
+                                border: none;
+                                border-bottom: 2px solid #007bff; 
+                                border-radius: 0;
+                            }
+                            
+
+                              .wrap-input100 {
+                                width: 100%;
+                                position: relative;
+                                
+                                margin-bottom: 37px;
+                              }
+                              
+                              .input100 {
+                              
+                                color: #555555;
+                                line-height: 1.2;
+                              
+                                display: block;
+                                width: 100%;
+                                height: 45px;
+                                background: transparent;
+                                padding: 0 5px;
+                              }
+                              
+                              /*---------------------------------------------*/ 
+                              .focus-input100 {
+                                position: absolute;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                pointer-events: none;
+                              }
+                              
+                              .focus-input100::before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                bottom: -2px;
+                                left: 0;
+                                width: 0;
+                                height: 2px;
+                              
+                                -webkit-transition: all 0.4s;
+                                -o-transition: all 0.4s;
+                                -moz-transition: all 0.4s;
+                                transition: all 0.4s;
+                              
+                                background: #6a7dfe;
+                                background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+                                background: -o-linear-gradient(left, #21d4fd, #b721ff);
+                                background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+                                background: linear-gradient(left, #21d4fd, #b721ff);
+                              }
+                              
+                              .focus-input100::after {
+                              
+                                color: #999999;
+                                line-height: 1.2;
+                              
+                                content: attr(data-placeholder);
+                                display: block;
+                                width: 100%;
+                                position: absolute;
+                                top: 16px;
+                                left: 0px;
+                                padding-left: 5px;
+                              
+                                -webkit-transition: all 0.4s;
+                                -o-transition: all 0.4s;
+                                -moz-transition: all 0.4s;
+                                transition: all 0.4s;
+                              }
+                              
+                              .input100:focus + .focus-input100::after {
+                                top: -25px;
+                              }
+                              
+                              .input100:focus + .focus-input100::before {
+                                width: 100%;
+                              }
+                              
+                              .has-val.input100 + .focus-input100::after {
+                                top: -25px;
+                              }
+                              
+                              .has-val.input100 + .focus-input100::before {
+                                width: 100%;
+                              }
+                              /*---------------------------------------------*/
+                            .btn-show-pass {
+                                
+                                color: #999999;
+                            
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -moz-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                padding-left: 5px;
+                                cursor: pointer;
+                                -webkit-transition: all 0.4s;
+                                -o-transition: all 0.4s;
+                                -moz-transition: all 0.4s;
+                                transition: all 0.4s;
+                            }
+                            
+                            .btn-show-pass:hover {
+                                color: #6a7dfe;
+                                color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+                                color: -o-linear-gradient(left, #21d4fd, #b721ff);
+                                color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+                                color: linear-gradient(left, #21d4fd, #b721ff);
+                            }
+                            
+                            .btn-show-pass.active {
+                                color: #6a7dfe;
+                                color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+                                color: -o-linear-gradient(left, #21d4fd, #b721ff);
+                                color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+                                color: linear-gradient(left, #21d4fd, #b721ff);
+                            }
+                            .form-login{
+                                padding:50px 30px;
+                                box-shadow: 0 5px 10px 0px rgb(0 0 0 / 10%);
+                                -webkit-box-shadow: 0 5px 10px 0px rgb(0 0 0 / 10%);
+                            }
+                           
+
+                            .our-team{
+                                overflow: hidden;
+                                border-radius: 5px 40px 5px 40px;
+                                position: relative;
+                                height: 300px;
+                                box-shadow: 0 0 10px #000;
+                            }
+                            .our-team img{
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                right: 0;
+                                transition: all .4s ease-in-out;
+                                object-fit: cover;
+                            }
+                            .our-team:hover img{
+                                
+                                right: 60%;
+                               
+                            }
+                            .our-team .team-content{
+                                width: 80%;
+                                height: 100%;
+                                background: #fff;
+                                padding: 30px;
+                                position: absolute;
+                                top: 0;
+                                right: -80%;
+                                transition: all .5s ease-in-out;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content:center;
+
+                            }
+                            .our-team:hover .team-content{
+                                right:0;
+                            }
+                            .our-team .title{
+                                font-size: 25px;
+                                color: #8e0c80;
+                                margin: 0 0 10px 0;
+                                font-weight: bold;
+                            }
+                            .our-team .post{
+                                display: block;
+                                font-size: 18px;
+                                font-weight: 900;
+                                color: #333;
+                                text-transform: uppercase;
+                                margin-bottom: 20px;
+                            }
+                            .our-team .description{
+                                font-size: 14px;
+                                color: #333;
+                               
+                            }
+                            .our-team .social{
+                                padding:0;
+                                margin:0;
+                                list-style-type: none;
+                               
+                            }
+                            .our-team .social li{
+                                display: inline-block;
+                                margin-right: 10px;
+                                                               
+                            }
+                            .our-team .social li:last-child{
+                                margin-right: 0px;
+                                                               
+                            }
+                            .our-team .social li a{
+                                display: block;
+                                width: 30px;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 15px; 
+                                border-radius: 50px; 
+                                text-align: right; 
+                                transition: all .3s ease-in-out; 
+                                text-decoration: none;
+                                color:#858585;                           
+                            }
+                            .our-team .social li a:hover{
+                                color:#fff;
+                                background: red;
+                            }
+                           
+                           
+                           
+                           
+                          

@@ -1,0 +1,63 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% load ratings %}
+{% load comment_tags %}
+{% block title %} | {{object.title }} {% endblock title %}
+{% block custome-header %} {% endblock custome-header %}
+{% block content %}
+
+     <br />
+    <section class="content my-5">
+      <div class="container">
+           <div class="row">
+             <div class="col-md-8 order-2 order-md-0 order-lg-0 order-xl-0">
+
+                 <!--single card-->
+             <div class="card mb-4 rounded-0 wow fadeInRight animated" data-wow-delay=".8s">
+                 <img src="{{ object.thumbnail.url }}" alt="{{object.title }}" class="img-fluid card-img-top img-article " >
+                 <div class="card-body ">
+                     <h5 class="card-title text-right mt-2 font-weight-normal">{{object.title }}</h5>
+                     <h6 class="card-subtitle text-right mt-4">{% ratings object %}</h6>
+                     <p class="card-text text-right text-justify mt-4 p-card">
+                        {% if object.is_special %}
+                                {% if user.is_authenticated and user.is_special_user or user.is_superuser or user == object.author %}
+                                        {{ object.description|safe }}
+                                {% else %}
+                                        {{ object.description|striptags|truncatewords:30 }}
+                                        <p class="alert alert-warning"> این یک مقاله ویژه است . برای مشاهده باید <a href="{% url 'request' %}">اشتراک ویژه</a> تهیه كنيد. (اشتراك يك ماهه 50,000 تومان است. )</p>
+                                {% endif %}
+                        {% else %}
+                            {{ object.description|safe }}
+                        {% endif %}
+                     </p>
+
+                 </div>
+                 <div class="card-footer text-right">
+                     <h6 class="mt-2 text-dark"> <a href="{% url 'article:author' object.author %}" class="text-dark">نوشته شده : {{ object.author.get_full_name }}</a></h6>
+                     <h6 class="mt-2 text-dark">تاریخ انتشار :  {{ object.jpublish }}</h6>
+                     <h6 class="mt-2 text-dark">تعداد بازديدها :  {{ object.hits.count }}</h6>
+                     <br>
+                     <div class="content-tag row d-flex justify-content-start">
+                         {% for cat in article.category.active %}
+                               <span><a href="{% url 'article:article_category_list' cat.slug %}">#{{cat.title}}</a></span>
+                         {% endfor %}
+                     </div>
+                 </div>
+                 <div class="comments">
+                        {% render_comments object request %}
+
+                 </div>
+             </div>
+                 <!--end single card-->
+             </div>
+             <div class="col-md-4 order-0 order-md-0 order-lg-0 order-xl-0">
+                 <aside class="article-aside">
+                          {% render_partial 'aside_partial' %}
+                 </aside>
+             </div>
+           </div>
+         </div>
+      </div>
+    </section>
+ {% endblock %}

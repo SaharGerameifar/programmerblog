@@ -1,0 +1,42 @@
+<ul class="navbar-nav ms-auto">
+    {% for category in category.children.active  %}
+         <li class="nav-item">
+             <a class="nav-link" href="{% url 'article:article_category_list' category.slug %}">{{ category.title }}</a>
+             {% if category.children.active %}
+                {% include 'shared/category_navbar_loop.html' %}
+            {% endif %}
+         </li>
+    {% endfor %}
+</ul>
+
+
+
+{#<ul class="nav-item dropdown">#}
+{#     {% for category in category.children.active %}#}
+{#            <a class="nav-link" href="{% url 'article:article_category_list' category.slug %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"#}
+{#                    aria-expanded="false">#}
+{#                    {{ category.title }} <i class="fa fa-angle-down"></i>#}
+{#                  </a>#}
+{##}
+{#            {% if category.children.active %}#}
+{#                    {% include 'shared/category_navbar_loop.html' %}#}
+{#            {% endif %}#}
+{##}
+{#     {% endfor %}#}
+{#</ul>#}
+
+
+
+{#{% for category in categories %}#}
+{#                            {% if category.parent == None %}#}
+{#                                 {% if category.children.active %}#}
+{#                                      <a class="nav-link" style="direction:rtl; text-align: right;" href="{% url 'article:article_category_list' category.slug %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"#}
+{#                                        aria-expanded="false">#}
+{#                                        {{ category.title }} <i class="fa fa-angle-down"></i>#}
+{#                                      </a>#}
+{#                                     {% include 'shared/category_navbar_loop.html' %}#}
+{#                                 {% else %}#}
+{#                                     <a class="nav-link" style="direction:rtl; text-align: right;" href="{% url 'article:article_category_list' category.slug %}">{{ category.title }}</a>#}
+{#                                 {% endif %}#}
+{#                            {% endif %}#}
+{#                      {% endfor %}#}
